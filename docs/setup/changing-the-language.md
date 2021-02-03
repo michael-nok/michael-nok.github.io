@@ -168,32 +168,3 @@ Click on a tile to change the directionality:
 </script>
 
   [8]: https://github.com/squidfunk/mkdocs-material/blob/master/src/base.html
-
-## Customization
-
-### Custom translations
-
-[:octicons-file-code-24: Source][1] ·
-:octicons-mortar-board-24: Difficulty: _easy_
-
-If you want to customize some (or all) of the translations for your language,
-you may follow the guide on [theme extension][9] and create a new partial in
-`partials/languages`, e.g. `en-custom.html`. Next, look up the translation you
-want to change in the [base translation][1] and add it to the partial.
-
-Let's say you want to change "__Table of contents__" to "__On this page__":
-
-``` html
-{% macro t(key) %}{{ {
-  "toc.title": "On this page"
-}[key] }}{% endmacro %}
-```
-
-Then, add the following lines to `mkdocs.yml`:
-
-``` yaml
-theme:
-  language: en-custom
-```
-
-  [9]: ../customization.md#extending-the-theme
